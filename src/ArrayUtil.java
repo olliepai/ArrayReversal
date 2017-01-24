@@ -1,11 +1,13 @@
 
-/** Reverse elements of array arr
-*   Precondition: arr.length > 0.
-*   Postcondition: The elements of arr have been reversed
-*   @param arr the array to manipulate
-*/
+
 
 public class ArrayUtil {
+	
+	/** Reverse elements of array arr
+	*   Precondition: arr.length > 0.
+	*   Postcondition: The elements of arr have been reversed
+	*   @param arr the array to manipulate
+	*/
 	public static void reverseArray(int[] arr){
 		/* code goes here */
 	}
