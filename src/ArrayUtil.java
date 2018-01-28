@@ -1,5 +1,4 @@
-
-
+import java.util.Stack;
 
 public class ArrayUtil {
 	
@@ -10,6 +9,15 @@ public class ArrayUtil {
 	*/
 	public static void reverseArray(int[] arr){
 		/* code goes here */
+		Stack<Integer> reverseStack = new Stack<Integer>();
+		for (int element : arr) {
+			reverseStack.push(element);
+		}
+
+		for (int pos = 0; pos < arr.length; pos++) {
+			arr[pos] = reverseStack.pop();
+		}
+		
 	}
 }
 
@@ -25,6 +33,17 @@ class Matrix{
 	*/
 	public void reverseAllRows(){
 		/* code goes here */
+		int[][] temp = new int[mat.length][mat[0].length];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				temp[i][j] = mat[i][j];
+			}
+		}
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp[i].length; j++) {
+				mat[i][j] = temp[i][temp[i].length - 1 - j];
+			}
+		}
 	}
 	
 	/** Reverses the elements of mat.
@@ -38,6 +57,22 @@ class Matrix{
 	*/
 	public void reverseMatrix(){
 		/* code goes here */
+		int[][] temp = new int[mat.length][mat[0].length];
+		int[][] temp2 = new int[mat.length][mat[0].length];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				temp[i][j] = mat[i][j];
+			}
+		}
+		
+		for (int i = 0; i < mat.length; i++) {
+			temp2[i] = temp[temp.length - 1 - i];
+		}
+		for (int i = 0; i < temp2.length; i++) {
+			for (int j = 0; j < temp2[i].length; j++) {
+				mat[i][j] = temp2[i][temp2[i].length - 1 - j];
+			}
+		}
 	}
 	
 	public int[][] getIntArray(){
